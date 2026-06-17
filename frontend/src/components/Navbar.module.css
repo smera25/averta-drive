@@ -1,0 +1,111 @@
+.navbar {
+  position: sticky; /* Or fixed, depending on exact behavior needed */
+  top: 0;
+  left: 0; /* Ensure it spans full width */
+  width: 100%; /* Ensure it spans full width */
+  background-color: #161D2B; /* Navy Blue Base */
+  color: white;
+  height: 60px; /* Standard height */
+  display: flex;
+  justify-content: center; /* Center the container */
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Transition background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.navbar.scrolled {
+  /* Navy Blue with 70% transparency */
+  background-color: rgba(22, 29, 43, 0.7); 
+  backdrop-filter: blur(5px); /* Optional: Add blur effect */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Limit content width */
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Increase gap slightly */
+  margin: 0; /* Reset default ul margin */
+  padding: 0; /* Reset default ul padding */
+}
+
+.navLinks li a {
+  color: #E0E0E0; /* Lighter grey for links */
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.navLinks li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* --- Mobile Menu --- */
+.mobileMenuToggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem; /* Make icon larger */
+  cursor: pointer;
+}
+
+.mobileOnly {
+  display: none; /* Hide mobile links by default */
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Position below navbar */
+  left: 0;
+  width: 100%;
+  background-color: #161D2B; /* Solid background for dropdown */
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileOnly li {
+  width: 100%;
+  text-align: center;
+}
+
+.mobileOnly li a {
+  display: block; /* Make links take full width */
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none; /* Hide desktop links */
+  }
+  .mobileMenuToggle {
+    display: block; /* Show hamburger */
+  }
+  .navbar {
+     justify-content: space-between; /* Adjust main navbar layout */
+  }
+  .container {
+     justify-content: space-between; /* Ensure logo and toggle are spaced */
+  }
+}

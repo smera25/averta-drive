@@ -1,0 +1,97 @@
+/* Container for the whole page */
+.kmeans-container {
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header section with title and description */
+.kmeans-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.kmeans-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.kmeans-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto; /* Center the description */
+}
+
+/* Grid to hold all the cluster cards */
+.cluster-grid {
+  display: grid;
+  /* This makes the grid responsive: */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* The style for each individual cluster card */
+.cluster-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- THE HOVER EFFECT --- */
+.cluster-card:hover {
+  transform: scale(1.03); /* Lifts the card up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Adds a stronger shadow */
+}
+
+/* Header of the card (e.g., "Cluster 1") */
+.card-header h2 {
+  margin: 0 0 20px 0;
+  color: #007bff; /* Blue header */
+  font-size: 1.8rem;
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+/* Container for the data points */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between each data point */
+}
+
+/* A single data point (e.g., "Average Age") */
+.data-point {
+  display: flex;
+  justify-content: space-between; /* Puts label on left, value on right */
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.data-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.data-value {
+  font-weight: 400;
+  color: #111;
+  font-size: 1.2rem;
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Special styling for the 'count' */
+.data-value.count {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #28a745; /* Green for the count */
+  background-color: #eaf7ec;
+}

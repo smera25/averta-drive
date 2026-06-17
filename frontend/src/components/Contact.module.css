@@ -1,0 +1,188 @@
+/* --- 1. Main Page Container --- */
+.contactPageContainer {
+  background-color: #101827; /* Matches your footer's dark theme */
+  color: #E0E0E0;
+  min-height: 90vh;
+  padding: 4rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* --- 2. Header / Title Section --- */
+.header {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  color: #ffffff; /* Your theme color */
+  margin: 0 0 0.5rem 0;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #A0A0A0;
+  line-height: 1.6;
+}
+
+/* --- 3. Table Container (for responsiveness) --- */
+.tableContainer {
+  width: 100%;
+  max-width: 1000px; /* Adjust max-width as needed */
+  overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  margin-bottom: 3rem;
+  border-radius: 12px; /* Rounded corners for the table */
+  background-color: #1a2233; /* Slightly lighter dark background for the table */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 4. Emergency Contacts Table --- */
+.emergencyTable {
+  width: 100%;
+  border-collapse: collapse; /* Removes spacing between borders */
+  text-align: left;
+  min-width: 600px; /* Ensures table doesn't get too squished */
+}
+
+.emergencyTable th,
+.emergencyTable td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #2a354b; /* Darker border for separation */
+}
+
+/* Table Header Styling */
+.emergencyTable th {
+  background-color: #a7d9f6; /* Theme color for header */
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky; /* Keep header visible on scroll if needed */
+  top: 0;
+}
+
+/* Apply rounded corners to header cells */
+.emergencyTable th:first-child {
+  border-top-left-radius: 12px;
+}
+.emergencyTable th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Table Body Row Styling */
+.emergencyTable td {
+  background-color: #1a2233; /* Main row background */
+  color: #E0E0E0;
+}
+
+/* Striped Rows for better readability */
+.emergencyTable tbody tr:nth-child(even) td {
+  background-color: #1f283b; /* Slightly different shade for even rows */
+}
+
+/* Hover effect for rows */
+.emergencyTable tbody tr:hover td {
+  background-color: #2a354b; /* Darken on hover */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Style for the contact number column to stand out */
+.emergencyTable td:last-child {
+  font-weight: 500;
+  color: #a7d9f6; /* Highlight contact numbers with theme color */
+  white-space: nowrap; /* Prevents numbers from wrapping oddly */
+}
+
+/* --- 5. Additional Contact Info --- */
+.additionalContact {
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 700px;
+}
+
+.additionalContact h2 {
+  font-size: 2rem;
+  color: #a7d9f6;
+  margin-bottom: 1rem;
+}
+
+.additionalContact p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #A0A0A0;
+}
+
+.additionalContact a {
+  color: #a7d9f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.additionalContact a:hover {
+  text-decoration: underline;
+  color: #a7d9f6; /* Slightly different blue on hover */
+}
+
+/* --- 6. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+  
+  /* Make the table stack on mobile if it can't fit */
+  .emergencyTable {
+    display: block;
+    width: 100%;
+    min-width: unset; /* Remove min-width for stacking */
+  }
+  .emergencyTable thead, .emergencyTable tbody, .emergencyTable th, .emergencyTable td, .emergencyTable tr {
+    display: block;
+  }
+  .emergencyTable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .emergencyTable tr {
+    border: 1px solid #2a354b;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden; /* For rounded corners */
+  }
+  .emergencyTable td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+  .emergencyTable td::before {
+    content: attr(data-label); /* Use data-label for content */
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: #a7d9f6; 
+  }
+  .emergencyTable td:nth-of-type(1)::before { content: "Category"; }
+  .emergencyTable td:nth-of-type(2)::before { content: "Helpline"; }
+  .emergencyTable td:nth-of-type(3)::before { content: "Contact"; }
+  
+  /* Reset padding for the additional contact section */
+  .additionalContact {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,121 @@
+/* --- 1. Main Footer Container --- */
+.footer {
+  /* A dark, professional blue-black */
+  background-color: #101827; 
+  color: #E0E0E0; /* A softer, more readable white */
+  padding: 4rem 2rem 0; /* Add padding to top/sides, 0 on bottom */
+  margin-top: auto; /* This pushes it to the bottom */
+}
+
+/* --- 2. 2-Column Content Wrapper --- */
+.footerContent {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to stack on mobile */
+  justify-content: space-between; /* Spreads columns out */
+  gap: 2rem; /* Space between columns */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content */
+  padding-bottom: 2.5rem;
+}
+
+/* --- 3. Individual Column Styling --- */
+.footerSection {
+  flex: 1; /* Each section tries to take equal space */
+  min-width: 220px; /* Ensures they don't get too skinny */
+}
+
+/* --- 4. Typography & Links --- */
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.footerSection h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f3f4; /* Using the blue from your original Home.css */
+  margin: 0 0 1.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footerSection p {
+  color: #A0A0A0; /* A lighter grey for descriptions */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- 5. Navigation Link List (Kept for email link) --- */
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerSection li {
+  margin-bottom: 0.75rem;
+}
+
+/* Styling for all links (email and nav) */
+.footerSection a {
+  color: #E0E0E0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerSection a:hover {
+  color: #fdfdfd; /* Highlight on hover */
+  text-decoration: underline;
+}
+
+/* --- 6. Bottom Copyright Bar --- */
+.footerBottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid #334155; /* A subtle separator line */
+  margin-top: 2rem;
+}
+
+.footerBottom p {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* --- 7. Social Icons (NEW) --- */
+.socialIcons {
+  margin-top: 1.5rem; /* Add space above the icons */
+  display: flex;
+  gap: 1.25rem; /* Space between icons */
+}
+
+/* Styling for the icon links */
+.socialIcons a {
+  color: #A0A0A0; /* Subtle grey color */
+  font-size: 1.5rem; /* Makes icons a good, clickable size */
+  transition: all 0.3s ease;
+}
+
+/* The professional hover effect */
+.socialIcons a:hover {
+  color: #feffff; /* Your theme color */
+  transform: translateY(-2px); /* Lifts the icon slightly */
+  text-decoration: none; /* No underline for icons */
+}
+
+
+/* --- 8. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Center the icons on mobile */
+  .socialIcons {
+    justify-content: center;
+  }
+}

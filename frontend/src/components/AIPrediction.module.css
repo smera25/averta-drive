@@ -1,0 +1,161 @@
+/* --- 1. Main Page Container --- */
+.predictionPageContainer {
+  background-color: #101827; /* Matches your theme's dark background */
+  color: #E0E0E0;
+  min-height: 90vh;
+  padding: 4rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- 2. Header / Title Section --- */
+.header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  color: #a7d9f6; /* Your theme color */
+  margin: 0 0 0.5rem 0;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #A0A0A0;
+  line-height: 1.6;
+}
+
+/* --- 3. Two-Column Layout --- */
+.predictionLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Form on left, Result on right */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 4. Form & Result "Cards" --- */
+.formContainer,
+.resultsContainer {
+  background-color: #1a2233; /* Dark card background */
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a354b;
+}
+
+.formContainer h3,
+.resultsContainer h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #334155;
+}
+
+/* --- 5. Form Element Styling --- */
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  color: #E0E0E0;
+  margin-bottom: 0.5rem;
+}
+
+.formSelect {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #2a354b; /* Darker input background */
+  color: #E0E0E0;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 1rem;
+  -webkit-appearance: none; /* Removes default OS styling */
+  -moz-appearance: none;
+  appearance: none;
+  /* Custom arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23E0E0E0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20128c3.6%203.6%207.8%205.4%2013%205.4s9.4-1.8%2013-5.4l128-128c3.6-3.6%205.4-7.8%205.4-13%200-5-1.8-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 10px;
+}
+
+/* --- 6. Form Button --- */
+.formButton {
+  background-color: #a7d9f6; /* Theme color */
+  color: #000000;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 163, 255, 0.4);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.formButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 163, 255, 0.6);
+  background-color: #a7d9f6; /* Slightly darker blue */
+}
+
+/* --- 7. Result Display Styling --- */
+.severityDisplay {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.severityResult {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* --- Dynamic Severity Colors --- */
+[data-severity="High"] {
+  color: #F44336; /* Red */
+}
+[data-severity="Medium"] {
+  color: #FF9800; /* Orange */
+}
+[data-severity="Low"] {
+  color: #4CAF50; /* Green */
+}
+
+.confidenceScore {
+  font-size: 1.1rem;
+  color: #A0A0A0;
+  margin: 0.5rem 0 0 0;
+}
+
+.suggestionBox {
+  background-color: #1f283b; /* A slightly different dark shade */
+  border-left: 4px solid #a7d9f6; /* Theme color accent */
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  color: #E0E0E0;
+}
+
+.suggestionBox p {
+  margin: 0.5rem 0 0 0;
+  line-height: 1.6;
+  color: #A0A0A0;
+}
+
+
+/* --- 8. Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  /* Stack the columns on mobile */
+  .predictionLayout {
+    grid-template-columns: 1fr;
+  }
+}

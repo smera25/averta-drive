@@ -1,0 +1,145 @@
+/* Container for the whole page */
+.apriori-container {
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header section with title and description */
+.apriori-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.apriori-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.apriori-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto; /* Center the description */
+}
+
+/* The list that will hold all the rule cards */
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between each rule card */
+}
+
+/* The style for a single rule card */
+.rule-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Keep children inside */
+}
+
+/* --- THE HOVER EFFECT --- */
+.rule-card:hover {
+  transform: scale(1.02); /* Lifts the card up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Adds a stronger shadow */
+}
+
+/* --- Main "IF -> THEN" body --- */
+.rule-card-body {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  padding: 25px;
+  gap: 20px;
+}
+
+/* On larger screens, put IF and THEN side-by-side */
+@media (min-width: 768px) {
+  .rule-card-body {
+    flex-direction: row;
+  }
+}
+
+.if-section, .then-section {
+  flex: 1; /* Each section takes equal space */
+  width: 100%;
+}
+
+.if-section h4, .then-section h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+.if-section h4 { color: #dc3545; } /* Red for IF */
+.then-section h4 { color: #28a745; } /* Green for THEN */
+
+.arrow-section {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+  /* Rotate arrow on mobile */
+  transform: rotate(90deg);
+}
+@media (min-width: 768px) {
+  .arrow-section {
+    transform: rotate(0deg);
+  }
+}
+
+/* Container for the little tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Style for each item (e.g., "Rainy") */
+.item-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #f1f1f1;
+  color: #444;
+}
+.if-tag { background-color: #fdebee; color: #c0392b; }
+.then-tag { background-color: #eaf7ec; color: #218838; }
+
+
+/* --- Bottom "Metrics" footer --- */
+.metrics-section {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+.metric-item {
+  text-align: center;
+  flex: 1;
+}
+
+.metric-item span {
+  display: block;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.metric-item strong {
+  font-size: 1.3rem;
+  color: #343a40;
+}
+
+/* Special highlight for Confidence */
+.metric-item.confidence strong {
+  color: #007bff;
+  font-size: 1.5rem;
+}

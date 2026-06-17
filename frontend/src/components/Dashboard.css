@@ -1,0 +1,98 @@
+/* Main container for the dashboard page */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header section */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* The 2x2 grid for our feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Base style for each feature card */
+.feature-card {
+  display: block;
+  text-decoration: none; /* Removes underline from Link */
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  
+  /* --- GRADIENT & HOVER --- */
+  background-size: 150% 150%; /* Makes the gradient 'movable' */
+  transition: all 0.4s ease;
+}
+
+/* --- THE HOVER EFFECT --- */
+.feature-card:hover {
+  transform: translateY(-10px); /* Lifts the card */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  background-position: right center; /* This slides the gradient */
+}
+
+/* Card content */
+.feature-card svg {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.feature-card h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* --- THE GRADIENTS --- */
+.card-olap {
+  background-image: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.card-kmeans {
+  background-image: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%);
+}
+
+.card-knn {
+  background-image: linear-gradient(135deg, #28a745 0%, #218838 100%);
+}
+
+.card-apriori {
+  background-image: linear-gradient(135deg, #fd7e14 0%, #e85d04 100%);
+}
+
+/* Responsive: On small screens, stack the cards */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
